@@ -30,7 +30,9 @@ LOCAL_SRC_FILES:=	src/lalloc.c src/edit.c src/eval.c src/exec.c \
 			src/lex.c src/main.c src/misc.c src/shf.c \
 			src/syn.c src/tree.c src/var.c
 
-LOCAL_SYSTEM_SHARED_LIBRARIES:= libc
+#LOCAL_SYSTEM_SHARED_LIBRARIES:= libc
+LOCAL_FORCE_STATIC_EXECUTABLE := true
+LOCAL_STATIC_LIBRARIES += libstdc++ libc libcutils
 
 LOCAL_C_INCLUDES:=	$(LOCAL_PATH)/src
 # additional flags first, then from Makefrag.inc: CFLAGS, CPPFLAGS
