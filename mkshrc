@@ -62,7 +62,7 @@ function setenv {
 
 for p in ~/bin; do
 	[[ -d $p/. ]] || continue
-	[[ :$PATH: = *:$p:* ]] || PATH=$p:$PATH
+	[[ :$PATH: = *:$p:* ]] || PATH=$PATH:$p
 done
 
 unset p
